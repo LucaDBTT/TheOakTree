@@ -1,0 +1,13 @@
+﻿.sidebar {
+    background: linear-gradient(to bottom, #2e8b57, #0c5a12);
+    color: white;
+    height: 100vh; 
+}
+
+    .sidebar .nav-link {
+        color: white; 
+    }
+
+        .sidebar .nav-link:hover {
+            color: #FFEB3B; 
+        }

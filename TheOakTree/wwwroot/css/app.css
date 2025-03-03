@@ -102,6 +102,21 @@ code {
     color: #c02d76;
 }
 
+.sidebar {
+    background: linear-gradient(to bottom, #4CAF50, #2e8b57);
+    color: white;  /* Asegura que el texto sea visible */
+    height: 100vh;  /* Hace que ocupe todo el alto de la ventana */
+}
+
+/* Opcional: Ajusta los links dentro del sidebar para que se vean bien */
+.sidebar .nav-link {
+    color: white;  /* Color de texto blanco */
+}
+
+.sidebar .nav-link:hover {
+    color: #FFEB3B;  /* Color cuando el mouse pasa sobre los enlaces */
+}
+
 
 
 
