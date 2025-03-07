@@ -2,20 +2,3 @@
 
 <PageTitle>Mariela Mazzulli jeje</PageTitle>
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-<h3>Bienvenido a mi página Blazor</h3>
-
-<p>La fecha y hora actual es: @currentTime</p>
-
-<button @onclick="ActualizarHora">Actualizar Hora</button>
-
-@code {
-    private DateTime currentTime = DateTime.Now;
-
-    private void ActualizarHora()
-    {
-        currentTime = DateTime.Now;
-    }
-}
