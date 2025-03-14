@@ -2,3 +2,104 @@
 
 <PageTitle>Mariela Mazzulli jeje</PageTitle>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+@code {
+    private List<string> images = new List<string>
+    {
+        "https://images.unsplash.com/photo-1511227499331-25c621db940e?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1549314662-c81dcbec48a8?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1504275107627-0c2ba7a43dba?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    };
+
+    private List<string> textos = new List<string>
+    {
+        "Todos los niveles, inscribite",
+        "Examenes oficiales, mas info",
+        "Profesionales recibidos"
+    };
+}
+
+<style>
+    /* Ajusta el tamaño del carrusel */
+    .carousel-container {
+        max-width: 2000px; /* Ajusta el ancho máximo */
+        margin: 0 auto; /* Centra el carrusel */
+    }
+
+    /* Ajusta las imágenes */
+    .carousel-inner img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; /* Asegura que las imágenes se recorten bien */
+        max-height: 600px; /* Altura máxima */
+    }
+
+    .carousel-item {
+        position: relative;
+    }
+
+    /* Capa de difuminado (overlay) */
+    .carousel-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0) 60%);
+        z-index: 1;
+    }
+
+    /* Texto elegante centrado */
+    .carousel-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #98FB98; /* Verde menta más suave */
+        font-family: 'Roboto', sans-serif; /* Fuente más legible */
+        font-size: 2rem; /* Tamaño de letra más grande */
+        font-weight: 500; /* Peso de fuente más ligero */
+        text-align: center;
+        max-width: 80%;
+        z-index: 2;
+    }
+
+    /* Estilo para las imágenes */
+    .carousel-inner img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-height: 400px;
+    }
+
+    /* Capa de difuminado con imagen de fondo */
+    .carousel-item img {
+        filter: blur(5px); /* Aplica el desenfoque */
+        transform: scale(1.1); /* Asegura que la imagen ocupe todo el espacio */
+    }
+</style>
+
+<div class="carousel-container">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            @for (int i = 0; i < images.Count; i++)
+            {
+                <div class="carousel-item @(i == 0 ? "active" : "")">
+                    <img src="@images[i]" class="d-block w-100" alt="Slide @(i + 1)">
+                    <div class="carousel-overlay"></div>
+                    <h1 class="carousel-text">@textos[i]</h1>
+                </div>
+            }
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
